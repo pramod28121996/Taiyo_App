@@ -5,7 +5,7 @@ export type Props = {};
 
 const SideBar: React.FC<Props> = ({}) => {
   return (
-    <div className="w-1/5 bg-slate-200 h-full p-4 hidden md:flex flex-col">
+    <div className="w-1/5 bg-slate-200 h-full p-4 hidden md:flex flex-col text-center">
       <div className="px-4">
         <img
           src={"https://cdn-icons-png.flaticon.com/512/4333/4333609.png"}
