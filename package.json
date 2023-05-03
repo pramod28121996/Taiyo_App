@@ -16,6 +16,7 @@
     "axios": "^1.4.0",
     "chart.js": "^4.3.0",
     "faker": "^5.5.3",
+    "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
@@ -60,7 +61,6 @@
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.0",
     "autoprefixer": "^10.4.14",
-    "gh-pages": "^5.0.0",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
   }
