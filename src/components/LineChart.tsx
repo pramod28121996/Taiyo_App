@@ -21,6 +21,7 @@ ChartJS.register(
   Legend
 );
 
+// Options for chart align position and chart title
 export const options = {
   responsive: true,
   plugins: {

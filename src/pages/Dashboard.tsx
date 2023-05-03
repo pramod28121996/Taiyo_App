@@ -3,17 +3,17 @@ import SideBar from "../components/Sidebar";
 import { useQuery } from "react-query";
 import DashboardService from "../services/DashboardService";
 import WorldWideCasesType from "../types/DashboardTypes/WorldWideCasesType";
-
 import HistoricalCasesType from "../types/DashboardTypes/HistoricalCasesType";
 import moment from "moment";
 import LineChart from "../components/LineChart";
-import VerticalBarChart from "../components/VerticalBarChart";
 import { CountriesCasesType } from "../types/DashboardTypes/CountriesCasesType";
 import PieChart from "../components/PieChart";
 
 export type Props = {};
 
 const Dashboard: React.FC<Props> = ({}) => {
+
+  //States Declaration
   const [getResult, setGetResult] = useState<WorldWideCasesType | null>();
   const [getHistoricalResult, setHistoricalResult] = useState<any | null>();
   const [getSelectedCounty, setSelectedCounty] =
@@ -22,6 +22,7 @@ const Dashboard: React.FC<Props> = ({}) => {
     any | null
   >();
 
+  //React Query for API
   const { isLoading: isLoadingData, refetch: getAllWorldWideCases } = useQuery<
     WorldWideCasesType,
     Error
@@ -40,7 +41,6 @@ const Dashboard: React.FC<Props> = ({}) => {
       },
     }
   );
-
   const {
     isLoading: isLoadingHistoricalData,
     refetch: getHistoricalCasesData,
@@ -82,7 +82,6 @@ const Dashboard: React.FC<Props> = ({}) => {
       },
     }
   );
-
   const { isLoading: isLoadingCountriesData, refetch: getCountriesCases } =
     useQuery<Array<CountriesCasesType>, Error>(
       "query-countries-cases",
@@ -147,6 +146,7 @@ const Dashboard: React.FC<Props> = ({}) => {
       }
     );
 
+  //Functions for event handling  
   const manipulateDateForLineGraph = () => {
     let months = [
       "January",
@@ -190,7 +190,6 @@ const Dashboard: React.FC<Props> = ({}) => {
       });
     });
   };
-
   const handleCounty = (e: any) => {
     const { value } = e.target;
     const countryData = getCountriesCasesResult.res.find(
@@ -241,13 +240,14 @@ const Dashboard: React.FC<Props> = ({}) => {
     setSelectedCounty(value);
     setCountriesCasesResult(data);
   };
+
+  //Effects for component
   useEffect(() => {
     getAllWorldWideCases();
     getHistoricalCasesData();
     getCountriesCases();
   }, []);
-
-  useEffect(() => {}, [getSelectedCounty]);
+  
   return (
     <>
       <SideBar />

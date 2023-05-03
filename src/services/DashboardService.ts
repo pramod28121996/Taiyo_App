@@ -1,5 +1,4 @@
 import axios from "axios";
-import Tutorial from "../types/DashboardTypes/WorldWideCasesType";
 import WorldWideCasesType from "../types/DashboardTypes/WorldWideCasesType";
 import HistoricalCasesType from "../types/DashboardTypes/HistoricalCasesType";
 import { CountriesCasesType } from "../types/DashboardTypes/CountriesCasesType";

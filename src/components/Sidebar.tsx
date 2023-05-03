@@ -14,12 +14,16 @@ const SideBar: React.FC<Props> = ({}) => {
         />
       </div>
       <div className="justify-stretch py-5 grid grid-cols-1 gap-3">
-        <div className="bg-slate-100 shadow-md rounded-md px-4 py-3">
-          <Link to={"/"}>Dashboard</Link>
-        </div>
-        <div className="bg-slate-100 shadow-md rounded-md px-4 py-3">
-          <Link to={"/contacts"}>Contacts</Link>
-        </div>
+        <Link to={"/"}>
+          <div className="bg-slate-100 shadow-md rounded-md px-4 py-3">
+            Dashboard
+          </div>
+        </Link>
+        <Link to={"/contacts"}>
+          <div className="bg-slate-100 shadow-md rounded-md px-4 py-3">
+            Contacts
+          </div>
+        </Link>
       </div>
     </div>
   );
