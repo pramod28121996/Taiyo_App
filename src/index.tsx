@@ -4,14 +4,29 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import {
+  legacy_createStore as createStore,
+  applyMiddleware,
+  Store,
+} from "redux";
+import reducer from "./redux/reducers/reducer";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+//Store Configuration
+const store: Store<ContactsState, ContactAction> & {
+  dispatch: DispatchType;
+} = createStore(reducer, applyMiddleware(thunk));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

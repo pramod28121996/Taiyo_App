@@ -2,8 +2,9 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Contacts from "./pages/Contacts";
-
 import { QueryClient, QueryClientProvider } from "react-query";
+
+//React Query Configuration
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

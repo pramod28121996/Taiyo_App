@@ -46,6 +46,7 @@ export const data = {
     },
   ],
 };
+
 export type Props = {
   pieData: any;
 };

@@ -58,6 +58,7 @@ export const data = {
 export type Props = {
   barData: any;
 };
+
 const VerticalBarChart: React.FC<Props> = ({ barData }) => {
   return (
     <Bar
