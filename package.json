@@ -2,7 +2,7 @@
   "name": "taiyo_app",
   "version": "0.1.0",
   "private": true,
-  "homepage ": "http://pramod28121996.github.io/taiyo_app",
+  "homepage ": "https://pramod28121996.github.io/taiyo_app",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@testing-library/jest-dom": "^5.16.5",
